@@ -70,7 +70,7 @@ helm install ingress-nginx ingress-nginx/ingress-nginx --namespace k8s-basics
 ```
 kubectl get svc -n k8s-basics
 ```
-Должна появится таблица. Нас интересует только ingress-nginx-controller. У него должен быть *Type:LoadBalanser * и *External-IP:pending*
+Должна появится таблица. Нас интересует только ingress-nginx-controller. У него должен быть *Type:LoadBalanser* и *External-IP:pending*
 
 | NAME                    | TYPE         | CLUSTER-IP     | EXTERNAL-IP    | PORT(S)                    | AGE |
 | ----------------------- | ------------ | -------------- | -------------- | -------------------------- | --- |
@@ -81,21 +81,21 @@ kubectl get svc -n k8s-basics
 minikube tunnel
 ```
 
-Далее снова смотрим в таблицу на значение в колонке** EXTERNAL-IP** (вместо pending должно появится значение, к примеру, 10.107.105.245 ) в ней должен прописаться внешний IP-адрес.
+Далее снова смотрим в таблицу на значение в колонке **EXTERNAL-IP** (вместо pending должно появится значение, к примеру, 10.107.105.245) в ней должен прописаться внешний IP-адрес.
 
-Копируем данный внешний адрес и прописываем в файле hosts машины, где развернут кластер правило маршрутизации:
+Копируем данный внешний адрес и прописываем в файле hosts машины правило маршрутизации, где развернут кластер:
 
 ```
 10.107.105.245 arch.homework
 ```
 Справка: для ОС windows прописываем в файле и сохраняем:
 ```
-C:\Windows\System32\drivers\etc
+C:\Windows\System32\drivers\etc\hosts
 ```
+
 ### В браузере вводим следующи url:
 <span style="color: red;">http://arch.homework/otusapp/aemelyanenko</span>
 
-Endpoints:
+Endpoints (особенности Laravel приложения):
 - /health будет доступна на маршруте: http://arch.homework/otusapp/aemelyanenko/api/health
 - /ready будет доступна на маршруте: http://arch.homework/otusapp/aemelyanenko/api/ready
-
