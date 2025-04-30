@@ -10,11 +10,11 @@
 
 3. Написать манифесты для деплоя в k8s для этого сервиса, а именно:
 
-- Манифесты должны описывать сущности: Deployment, Service, Ingress.
-- В Deployment могут быть указаны Liveness, Readiness пробы.
-- Количество реплик должно быть не меньше 2.
-- Image контейнера должен быть указан с Dockerhub.
-- Хост в ингрессе должен быть arch.homework. В итоге после применения манифестов GET запрос на http://arch.homework/health должен отдавать {“status”: “OK”}.
+ - Манифесты должны описывать сущности: Deployment, Service, Ingress.
+ - В Deployment могут быть указаны Liveness, Readiness пробы.
+ - Количество реплик должно быть не меньше 2.
+ - Image контейнера должен быть указан с Dockerhub.
+ - Хост в ингрессе должен быть arch.homework. В итоге после применения манифестов GET запрос на http://arch.homework/health должен отдавать {“status”: “OK”}.
 
 ### На выходе предоставить
 
@@ -26,12 +26,19 @@
 
 ### Результат
 
+1. [Манифесты][1]
+2. [Deployment с Probs][2]
+3. Количество реплик и image containers с dockerhub [Реплики+Image][3]
+4. Хост в Ingress [Ingress][4]
+
+#### Порядок запуска проекта
+
 **Клонировать проект в локальный репозиторий**
 
  ```
  git clone https://github.com/Jony2Good/k8s_basics.git
 ```
-- в корневой директории найти файл .env.example исправить его на .env
+ - в корневой директории найти файл .env.example исправить его на .env
 
 **Стартуем minikube**
 ```
@@ -84,7 +91,7 @@ minikube tunnel
 Копируем данный внешний адрес и прописываем в файле hosts машины правило маршрутизации, где развернут кластер:
 
 ```
-10.107.105.245 arch.homework (значение IP взято рандомное, нужно подставлять данные из External-IP)
+10.107.105.245 arch.homework
 ```
 Справка: для ОС windows прописываем в файле и сохраняем:
 ```
@@ -97,3 +104,8 @@ http://arch.homework/otusapp/aemelyanenko
 Endpoints (особенности Laravel приложения):
 - /health будет доступна на маршруте: http://arch.homework/otusapp/aemelyanenko/api/health
 - /ready будет доступна на маршруте: http://arch.homework/otusapp/aemelyanenko/api/ready
+
+[1]: https://github.com/Jony2Good/k8s_basics/tree/main/k8s "Манифесты"
+[2]: https://github.com/Jony2Good/k8s_basics/blob/main/k8s/09-nginx-deployment.yaml "Deployment с Probs"
+[3]: https://github.com/Jony2Good/k8s_basics/blob/main/k8s/06-php-deployment.yaml "Реплики+Image"
+[4]: https://github.com/Jony2Good/k8s_basics/blob/main/k8s/11-app-ingress.yaml "Ingress"
