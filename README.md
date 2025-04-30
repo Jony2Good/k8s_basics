@@ -106,7 +106,7 @@ Endpoints (особенности Laravel приложения):
 - /health будет доступна на маршруте: http://arch.homework/otusapp/aemelyanenko/api/health
 - /ready будет доступна на маршруте: http://arch.homework/otusapp/aemelyanenko/api/ready
 
-[1]: https://github.com/Jony2Good/k8s_basics/tree/main/k8s "Манифесты"
-[2]: https://github.com/Jony2Good/k8s_basics/blob/main/k8s/09-nginx-deployment.yaml "Deployment с Probs"
-[3]: https://github.com/Jony2Good/k8s_basics/blob/main/k8s/06-php-deployment.yaml "Реплики+Image"
-[4]: https://github.com/Jony2Good/k8s_basics/blob/main/k8s/11-app-ingress.yaml "Ingress"
+[1]: https://github.com/Jony2Good/k8s-basics/tree/main/k8s "Манифесты"
+[2]: https://github.com/Jony2Good/k8s-basics/blob/main/k8s/09-nginx-deployment.yaml "Deployment с Probs"
+[3]: https://github.com/Jony2Good/k8s-basics/blob/main/k8s/06-php-deployment.yaml "Реплики+Image"
+[4]: https://github.com/Jony2Good/k8s-basics/blob/main/k8s/11-app-ingress.yaml "Ingress"
