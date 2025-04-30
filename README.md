@@ -36,7 +36,7 @@
 **Клонирум проект в локальный репозиторий**
 
  ```
- git clone https://github.com/Jony2Good/k8s_basics.git
+ git clone https://github.com/Jony2Good/k8s-basics.git
 ```
  - в корневой директории найти файл .env.example исправить его на .env
 
